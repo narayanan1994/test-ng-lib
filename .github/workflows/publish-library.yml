@@ -18,15 +18,19 @@ jobs:
               with:
                   node-version: 20.10.0
                   registry-url: https://registry.npmjs.org
+                  scope: 'narayanan.s94'
             - name: install packages
               run: npm install
             - name: install packages
               run: npm install
             - name: Build
               run: npm run-script build-library
-            # - run: |
-            #     echo "@username:registry=https://npm.pkg.github.com" >> .npmrc
-            #     echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
+            - name: setup .npmrc file
+              working-directory: dist/test-ng-lib
+              run: |
+                echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" >> .npmrc
+                echo "registry=https://registry.npmjs.org/" >> .npmrc
+                echo "always-auth=true" >> .npmrc
             - name: publish
               run: npm publish --access public
               working-directory: dist/test-ng-lib
