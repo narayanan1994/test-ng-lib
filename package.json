@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo",
+    "build-library": "ng build test-ng-lib",
     "build": "ng build demo",
     "watch": "ng build demo --watch --configuration development",
     "test": "ng test demo"
