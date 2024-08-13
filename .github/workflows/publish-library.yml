@@ -1,6 +1,8 @@
 name: "publish library to npmjs"
 
-on: release
+on:
+  release:
+    types: [created]
 
 jobs:
     publish:
