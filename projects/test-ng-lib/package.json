@@ -1,7 +1,7 @@
 {
   "name": "@narayanan1994/test-ng-lib",
   "description": "angular library publish testing",
-  "version": "0.0.1",
+  "version": "0.0.1-beta",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
@@ -15,7 +15,7 @@
     "url": "https://github.com/narayanan1994/test-ng-lib.git"
   },
   "publishConfig": {
-    "@narayanan1994:registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "npm",
