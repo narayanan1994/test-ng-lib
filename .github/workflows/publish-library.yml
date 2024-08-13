@@ -18,29 +18,29 @@ jobs:
               with:
                   node-version: 20.10.0
                   registry-url: https://registry.npmjs.org
-                  scope: 'narayanan.s94'
+                  scope: '@narayanan1994'
             - name: install packages
               run: npm install
             - name: install packages
               run: npm install
             - name: Build
               run: npm run-script build-library
-            # - name: setup .npmrc file
-            #   working-directory: dist/test-ng-lib
-            #   run: |
-            #     echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" >> .npmrc
-            #     echo "registry=https://registry.npmjs.org/" >> .npmrc
-            #     echo "always-auth=true" >> .npmrc
+            - name: setup .npmrc file
+              working-directory: dist/test-ng-lib
+              run: |
+                echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" >> .npmrc
+            - name: Who am i?
+              run: npm whoami
+            - name: publish
+              run: npm publish --access public
+              working-directory: dist/test-ng-lib
+              # env:
+              #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
             # - name: publish
-            #   run: npm publish --access public
             #   working-directory: dist/test-ng-lib
             #   env:
-            #       NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-            - name: publish
-              working-directory: dist/test-ng-lib
-              env:
-                NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-              run: |
-                - echo //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN > .npmrc
-                - npm whoami
-                - npm publish --access public
+            #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+            #   run: |
+            #     - echo //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN > .npmrc
+            #     - npm whoami
+            #     - npm publish --access public
