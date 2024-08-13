@@ -5,6 +5,9 @@ on: release
 jobs:
     publish:
         runs-on: ubuntu-latest
+        permissions:
+          contents: read
+          id-token: write
         steps:
             - name: checkout
               uses: actions/checkout@v2
@@ -19,8 +22,10 @@ jobs:
               run: npm install
             - name: Build
               run: npm run-script build-library
+            - name: Copy README
+              run: cp README.md ./dist/ng-select/
             - name: publish
-              run: npm publish --access public
+              run: npm publish --provenance --access public
               working-directory: dist/test-ng-lib
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}

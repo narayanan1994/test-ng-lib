@@ -1,4 +1,4 @@
-# test-ng-lib
+# Main Readme file test-ng-lib
 testing angular library v0.0.1
 
 # test-ng-lib
