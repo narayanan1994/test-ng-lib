@@ -1,0 +1,4 @@
+<h2>User List</h2>
+@for(user of userList;track user; let index = $index) {
+  <div>Name: {{user.firstName}} {{user.lastName}}</div>
+}
