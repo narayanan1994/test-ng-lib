@@ -1,5 +1,6 @@
 {
   "name": "@narayanan/test-ng-lib",
+  "description": "angular library publish testing",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
@@ -8,5 +9,24 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/narayanan1994/test-ng-lib.git"
+    },
+    "keywords": [
+        "npm",
+        "publish",
+        "package",
+        "registry"
+    ],
+    "author": {
+        "name": "Narayanan",
+        "email": "nanu.s94@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/narayanan1994/test-ng-lib/issues"
+    },
+    "homepage": "https://github.com/narayanan1994/test-ng-lib#readme"
 }
