@@ -29,8 +29,8 @@ jobs:
               working-directory: dist/test-ng-lib
               run: |
                 echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" >> .npmrc
-            - name: Who am i?
-              run: npm whoami
+            # - name: Who am i?
+            #   run: npm whoami
             - name: publish
               run: npm publish --access public
               working-directory: dist/test-ng-lib
